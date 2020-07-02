@@ -1,6 +1,6 @@
 package mocks
 
-import "github.com/guilhermebr/minesweeper/types"
+import "github.com/robertpeteuil/minesweeper/types"
 
 type MockGameService struct {
 	OnCreate func(game *types.Game) error

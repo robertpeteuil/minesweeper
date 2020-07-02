@@ -1,6 +1,6 @@
 package memory
 
-import "github.com/guilhermebr/minesweeper/types"
+import "github.com/robertpeteuil/minesweeper/types"
 
 type DB struct {
 	games map[string]*types.Game

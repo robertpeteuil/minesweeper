@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/guilhermebr/minesweeper/api"
+	"github.com/robertpeteuil/minesweeper/api"
 	"github.com/sirupsen/logrus"
 )
 

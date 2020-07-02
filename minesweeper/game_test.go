@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/guilhermebr/minesweeper/mocks"
-	"github.com/guilhermebr/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper/mocks"
+	"github.com/robertpeteuil/minesweeper/types"
 )
 
 func TestCreateGame(t *testing.T) {

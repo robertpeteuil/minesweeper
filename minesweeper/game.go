@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/guilhermebr/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper/types"
 )
 
 type GameService struct {

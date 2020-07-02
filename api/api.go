@@ -4,9 +4,9 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/guilhermebr/minesweeper/minesweeper"
-	"github.com/guilhermebr/minesweeper/storage/memory"
-	"github.com/guilhermebr/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper/minesweeper"
+	"github.com/robertpeteuil/minesweeper/storage/memory"
+	"github.com/robertpeteuil/minesweeper/types"
 	"github.com/sirupsen/logrus"
 	"github.com/urfave/negroni"
 )
