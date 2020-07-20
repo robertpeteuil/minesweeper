@@ -6,6 +6,13 @@ More about the game: https://en.wikipedia.org/wiki/Minesweeper_(video_game)
 
 ## Build
 
+Requires using `dep` to install dependancies from repo in `$GOROOT`
+
+- clone repo to go src `go get github.com/robertpeteuil/minesweeper-api`
+- install `dep` from brew with `brew install dep`
+- `cd $GOROOT/src/github.com/robertpeteuil/minesweeper-api`
+- install dependancies with: `dep ensure -v`
+
 ``` sh
 go build -o build/minesweeper ./cmd
 ```
