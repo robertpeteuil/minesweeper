@@ -3,7 +3,7 @@ package memory
 import (
 	"errors"
 
-	"github.com/robertpeteuil/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper-api/types"
 )
 
 type GameStore struct {

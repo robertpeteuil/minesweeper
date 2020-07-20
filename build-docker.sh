@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BUILD_IMAGE='tsuru/alpine-go:latest'
-CONTAINER_PROJECT_PATH='/go/src/github.com/robertpeteuil/minesweeper'
+CONTAINER_PROJECT_PATH='/go/src/github.com/robertpeteuil/minesweeper-api'
 BUILD_CMD="go build --ldflags '-linkmode external -extldflags \"-static\"' -o build/minesweeper ./cmd"
 
 set -x

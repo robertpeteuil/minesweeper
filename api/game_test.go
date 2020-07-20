@@ -7,8 +7,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/robertpeteuil/minesweeper/mocks"
-	"github.com/robertpeteuil/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper-api/mocks"
+	"github.com/robertpeteuil/minesweeper-api/types"
 	"github.com/sirupsen/logrus"
 )
 

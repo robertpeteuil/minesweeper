@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/robertpeteuil/minesweeper/types"
+	"github.com/robertpeteuil/minesweeper-api/types"
 )
 
 func init() {
