@@ -34,7 +34,11 @@ func Start(log *logrus.Logger) error {
 
 	//Run Server
 	log.Infoln("Server running on port :3000")
-	http.ListenAndServe(":3000", n)
+	err := http.ListenAndServe(":3000", n)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 

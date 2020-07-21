@@ -26,16 +26,16 @@ func (s *Services) createGame(w http.ResponseWriter, r *http.Request) {
 
 	if err := json.NewDecoder(r.Body).Decode(&game); err != nil {
 		log.Error(err)
-		ErrInvalidJSON.Send(w)
+		_ = ErrInvalidJSON.Send(w)
 		return
 	}
 
 	if err := s.GameService.Create(&game); err != nil {
 		log.WithField("err", err).Error("cannot create game")
-		ErrInternalServer.Send(w)
+		_ = ErrInternalServer.Send(w)
 		return
 	}
-	Success(game, http.StatusCreated).Send(w)
+	_ = Success(game, http.StatusCreated).Send(w)
 }
 
 // title: start game
@@ -56,14 +56,14 @@ func (s *Services) startGame(w http.ResponseWriter, r *http.Request) {
 	game, err := s.GameService.Start(name)
 	if err != nil {
 		log.WithField("err", err).Error("cannot start game")
-		ErrInternalServer.Send(w)
+		_ = ErrInternalServer.Send(w)
 		return
 	}
 
 	game2 := *game
 	game2.Grid = nil
 
-	Success(game2, http.StatusOK).Send(w)
+	_ = Success(game2, http.StatusOK).Send(w)
 }
 
 // title: cell click
@@ -89,14 +89,14 @@ func (s *Services) clickCell(w http.ResponseWriter, r *http.Request) {
 
 	if err := json.NewDecoder(r.Body).Decode(&cellPos); err != nil {
 		log.Error(err)
-		ErrInvalidJSON.Send(w)
+		_ = ErrInvalidJSON.Send(w)
 		return
 	}
 
 	game, err := s.GameService.Click(name, cellPos.Row, cellPos.Col)
 	if err != nil {
 		log.WithField("err", err).Error("cannot click cell")
-		ErrInternalServer.Send(w)
+		_ = ErrInternalServer.Send(w)
 		return
 	}
 	cell := game.Grid[cellPos.Row][cellPos.Col]
@@ -113,5 +113,5 @@ func (s *Services) clickCell(w http.ResponseWriter, r *http.Request) {
 	result.Cell = cell
 	result.Game = *game
 
-	Success(&result, http.StatusOK).Send(w)
+	_ = Success(&result, http.StatusOK).Send(w)
 }

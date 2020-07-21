@@ -38,7 +38,7 @@ func TestCreateGame(t *testing.T) {
 		t.Errorf("unexpected mines. want=12, got %d", game.Mines)
 	}
 	if game.Status != "new" {
-		t.Errorf("unexpected status. want='new', got %d", game.Status)
+		t.Errorf("unexpected status. want='new', got %v", game.Status)
 	}
 }
 func TestCreateGame_Default(t *testing.T) {
@@ -123,15 +123,15 @@ func TestStartGame(t *testing.T) {
 	}
 
 	if game.Status != "started" {
-		t.Errorf("unexpected status. want='started', got %d", game.Status)
+		t.Errorf("unexpected status. want='started', got %v", game.Status)
 	}
 
 	expected := []types.CellGrid{
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 			types.Cell{Mine: true, Clicked: false, Value: 0},
 		},
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 		},
@@ -146,11 +146,11 @@ func TestClickCell(t *testing.T) {
 		Store: &mocks.MockGameStore{
 			OnGetByName: func(name string) (*types.Game, error) {
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
@@ -180,11 +180,11 @@ func TestClickCell(t *testing.T) {
 	}
 
 	expected := []types.CellGrid{
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: true, Value: 1},
 			types.Cell{Mine: true, Clicked: false, Value: 0},
 		},
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 		},
@@ -199,11 +199,11 @@ func TestClickCell_MineCell(t *testing.T) {
 		Store: &mocks.MockGameStore{
 			OnGetByName: func(name string) (*types.Game, error) {
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
@@ -233,11 +233,11 @@ func TestClickCell_MineCell(t *testing.T) {
 	}
 
 	expected := []types.CellGrid{
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 			types.Cell{Mine: true, Clicked: true, Value: 0},
 		},
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 			types.Cell{Mine: false, Clicked: false, Value: 1},
 		},
@@ -252,11 +252,11 @@ func TestClickCell_Won(t *testing.T) {
 		Store: &mocks.MockGameStore{
 			OnGetByName: func(name string) (*types.Game, error) {
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: true, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: true, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
@@ -287,11 +287,11 @@ func TestClickCell_Won(t *testing.T) {
 	}
 
 	expected := []types.CellGrid{
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: true, Value: 1},
 			types.Cell{Mine: true, Clicked: false, Value: 0},
 		},
-		types.CellGrid{
+		{
 			types.Cell{Mine: false, Clicked: true, Value: 1},
 			types.Cell{Mine: false, Clicked: true, Value: 1},
 		},
