@@ -139,11 +139,11 @@ func TestStartGame_Success(t *testing.T) {
 				}
 
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
@@ -221,11 +221,11 @@ func TestClickCell_Success(t *testing.T) {
 		GameService: &mocks.MockGameService{
 			OnClick: func(name string, i, j int) (*types.Game, error) {
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
@@ -273,11 +273,11 @@ func TestClickCell_GameOver(t *testing.T) {
 		GameService: &mocks.MockGameService{
 			OnClick: func(name string, i, j int) (*types.Game, error) {
 				grid := []types.CellGrid{
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 					},
-					types.CellGrid{
+					{
 						types.Cell{Mine: false, Clicked: false, Value: 1},
 						types.Cell{Mine: true, Clicked: false, Value: 0},
 					},
