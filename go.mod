@@ -1,4 +1,4 @@
-module github.com/robertpeteuil/minesweeper-api
+module github.com/robertpeteuil/minesweeper
 
 go 1.14
 

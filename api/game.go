@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/robertpeteuil/minesweeper-api/types"
+	"github.com/robertpeteuil/minesweeper/types"
 	"github.com/sirupsen/logrus"
 )
 
