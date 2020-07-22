@@ -4,22 +4,22 @@ Go(lang) implementation of Minesweeper game API
 
 [Minesweeper History](https://en.wikipedia.org/wiki/Minesweeper_(video_game))
 
-## Build
+## Build Binary
 
 ``` sh
 go build -o build/minesweeper .
 ```
 
-## Run
+## Run Binary
 
 ``` sh
 ./build/minesweeper
 ```
 
-## Build and Run with Docker
+## Build Container
 
 ``` sh
-sh run-docker.sh
+./build-docker.sh
 ```
 
 ## Create a New Game
